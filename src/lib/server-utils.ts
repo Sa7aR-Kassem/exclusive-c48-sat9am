@@ -4,7 +4,8 @@ import { cookies } from "next/headers";
 
 
 export async function getUserJWT() {
-    const decodedToken = (await cookies()).get('next-auth.session-token')?.value;
+    const storedCookie = await cookies()
+    const decodedToken = storedCookie.get('next-auth.session-token')?.value || storedCookie.get('__Secure-next-auth.session-token')?.value;
 
     const token = await decode({ token: decodedToken, secret: process.env.NEXTAUTH_SECRET! })
 
