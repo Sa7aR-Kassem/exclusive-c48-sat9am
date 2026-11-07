@@ -16,6 +16,32 @@ const nextConfig: NextConfig = {
       },
     },
   },
+
+  // https://ecommerce.routemisr.com/Route-Academy-categories/1681511865180.jpeg
+  images: {
+    remotePatterns: [
+      // {
+      //   protocol: 'https',
+      //   hostname: 'ecommerce.routemisr.com',
+      //   pathname: '/**',
+      // },
+      {
+        protocol: 'https',
+        hostname: 'ecommerce.routemisr.com',
+        pathname: '/Route-Academy-categories/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'ecommerce.routemisr.com',
+        pathname: '/Route-Academy-brands/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'ecommerce.routemisr.com',
+        pathname: '/Route-Academy-products/**',
+      },
+    ]
+  }
 };
 
 export default nextConfig;
